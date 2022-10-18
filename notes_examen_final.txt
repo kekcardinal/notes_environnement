@@ -1,0 +1,92 @@
+ls (affiche le contenu)
+touch (creer un nouveau fichier) (touch 1 2 3),
+creer 3 fichiers
+mv (move permet de renommer le fichier, mv 1 a)
+fichier numero 1 a été renommer par a
+mv 2 3 .. (va apporter les fichiers dans le repertoire parent)
+cd .. 
+ls = 2 3
+cd tutorat
+ls = a
+ls - l = -rw-r--r-- 1 jp 0 oct 18 12:32 a
+ip a (adresse ip)(10.30.232.17/24 (24 = masque de sous réseau))
+32 bits adresse ip (24 premiers bits appartiennent au réseau)
+ping 10.30.232.17 (ordinateur virtuel)(va permettre de voir s'il y a une connection)
+pour savoir qui est connecté , utiliser la commande Who (tty filaire)(pts distance)
+==10.30.232.9 (ordinateur physique)
+whoami permet de voir l'utilisateur courant
+pour savoir le nom de la machine (hostname)
+
+adresse 80 pour l'adresse du serveur.
+port 443 pour le port par defaut.
+
+créer un repertoire web (mkdir web)(cd web)(nano index.html)
+python -m http.server 8080
+
+Serving http on 0.0.0.0 port 8080 (http://0.0.0.0:8080/)
+si on ecrit dans le meme sous reseau sur internet (10.30.232.17:8080) on se dirige sur index.html du serveur
+
+Internet : inter connection de milliers de réseau sous le meme protocol : arpanet (militaire)
+
+PERMISSIONS :
+
+mkdir permissions
+rmdir web/* (étoile == supprime tout les fichiers dans le repertoire)
+cd permissions (deplacement dans le repertoire)
+touch permission1
+ls -l
+-rw-r--r--(644, valeur par defaut) permission1 (propriétaire (user), groupe propriétaire (group), tous les autres (others))
+read = 4
+write = 2
+execute = 1
+
+pour rendre executable pour user : chmod u(user)+x(executable) ou g(group) ou o(others)
+lorsque l'on fait ls la couleur de la permission a change elle est devenu verte pour dire executable
+
+retirer read de others : chmod o-r permission1
+pour ajouter write de others  : chmod o+w permission1
+
+pour refaire la meme chose mais ecraser toutes les permissions : chmod 740 permission1
+
+(readwriteexecute pour user)(read pour groupe)(rien pour others)
+il faut etre root ou propriétaire pour modifier les permissions
+
+chmod 000 permission1
+ls -l
+(aucune permission)
+su - (devient root)
+ls
+cd /home/jp/tutorat/
+ls
+cd permissions
+ls permission1
+ls -l
+cat permission1 (arborescence)
+
+
+chown (juste administrateur systeme) 
+
+id = numeros des groupes ou des id , root = 0 
+
+fichier repertoire pour les sites : /var/www/html/
+ls 
+index.html avec les trucs de base de nginx
+
+useradd (permet plus rapidement) ou sudo adduser (==script qui utilise useradd mais avec des questions)
+
+sudo groupadd classe1
+
+(apt install nginx) -y
+
+aller voir dans la rubrique chmod l'aide
+
+
+
+
+
+
+
+
+
+
+
